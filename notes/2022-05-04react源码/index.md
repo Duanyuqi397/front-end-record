@@ -8,6 +8,10 @@
     react-reconciler:协调器（核心）
     react-dom:跑在浏览器里面的渲染器
     scheduler:调度器,包含SchedulerPriorities(优先级调度)，SchedulerMinHeap(最小堆调度算法)等
+## react解决的问题
+    CPU瓶颈：js是单线程的，而js执行和页面渲染的进程又是互斥的，如果js执行时间较长，主线程就会卡顿，严重影响交互体验。
+        react如何解决？在浏览器的每一帧执行时间里，预留5ms给js线程，react利用这部分时间进行组件更新，时间不够用时，将控制权交回给浏览器，react等待下一帧来继续进行被中断的工作。所以，解决这个问题的关键是时间切片，时间切片的关键是：异步可中断更新
+    IO瓶颈：React实现了Suspense (opens new window)功能及配套的hook——useDeferredValue，内部也是通过异步可中断更新实现
 ## react中的数据结构
     二进制位运算：
         为什么不用数字运算而是用二进制？
