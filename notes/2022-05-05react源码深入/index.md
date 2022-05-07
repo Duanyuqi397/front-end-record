@@ -22,3 +22,6 @@
         react应用根节点通过改变current指向，在不同rootFiber之间切换来完成更新。
 react创建并构建fiber树分为两个阶段
 
+## react如何实现requestIdleCallback？
+    通过messageChannel(宏任务)，因为宏任务是在下次事件循环中执行，不会阻塞本次页面更新。而微任务是在本次页面更新前执行，与同步执行无异，不会让出主线程
+    为什么不用setTimeout(fn, 0) ？因为setTimeout不可以在两个任务间通信，而且递归执行 setTimeout(fn, 0) 时，最后间隔时间会变成 4 毫秒，而不是最初的 1 毫秒
