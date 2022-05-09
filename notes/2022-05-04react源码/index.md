@@ -13,11 +13,16 @@
         react如何解决？在浏览器的每一帧执行时间里，预留5ms给js线程，react利用这部分时间进行组件更新，时间不够用时，将控制权交回给浏览器，react等待下一帧来继续进行被中断的工作。所以，解决这个问题的关键是时间切片，时间切片的关键是：异步可中断更新
     IO瓶颈：React实现了Suspense (opens new window)功能及配套的hook——useDeferredValue，内部也是通过异步可中断更新实现
 ## react中的数据结构
-    二进制位运算：
-        为什么不用数字运算而是用二进制？
-            二进制运算效率高，提高性能，react中状态/类型/优先级的组合比较等操作都是通过位运算
-    深度优先遍历：将代码转换成FiberNode的时候采用的深度优先遍历，深度优先遍历树，生成链表
-    FiberNode是一个链表，关键属性：
+    **二进制位运算**：
+    为什么不用数字运算而是用二进制？
+        二进制运算效率高，提高性能，react中状态/类型/优先级的组合比较等操作都是通过位运算
+    **深度优先遍历**：将代码转换成FiberNode的时候采用的深度优先遍历，深度优先遍历树，生成链表
+
+    **单向链表**：updateQueue，firstBaseUpdate->lastBaseUpdate
+
+    **单向环状链表**：
+
+    **FiberNode**是一个链表，关键属性：
 ```JavaScript
     //Instance
     this.tag = tag;//当前的fiber类型，有ClassComponent,FunctionComponent,HostComponent
