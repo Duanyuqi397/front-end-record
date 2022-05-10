@@ -20,7 +20,9 @@
 
     **单向链表**：updateQueue，firstBaseUpdate->lastBaseUpdate
 
-    **单向环状链表**：
+    **单向环状链表**：updateQueue中的shared.pending，以环状链表保存当前的更新
+
+    **数组**：updatePayload,偶数索引的值为变化的prop key，奇数索引的值为变化的prop value
 
     **FiberNode**是一个链表，关键属性：
 ```JavaScript
