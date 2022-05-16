@@ -3,3 +3,9 @@
 通过context存储全局用户信息，实现JWT，实现自定义useAuth，实现登陆状态与非登陆状态切换
 添加登录状态维持，封装useHttp管理登录状态
 通过Emotion和antd优化登录注册页面样式
+封装通用ui组件Row
+优化项目列表页面样式
+封装useAsync统一管理异步请求，提取project和user逻辑封装成自定义hook
+登录注册loading和错误处理
+处理me接口loading和error
+添加ErrorBoundary
