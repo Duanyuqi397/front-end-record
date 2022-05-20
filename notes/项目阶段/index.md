@@ -15,3 +15,11 @@
 用user-select选择用户
 项目收藏功能
 用useCallback解决无限循环问题
+用状态提升实现ProjectModal
+用useReducer改造useAsync
+问题：什么时候用useState,什么时候用useReducer?
+    功能上两者可以互换的，useState适合定义单个状态，useReducer适合定义一群互相影响的状态
+remake-duan-redux-toolkit:
+    用redux-toolkit改写projectModal
+    用redux-toolkit替换context
+用url管理projectModal状态
