@@ -23,3 +23,6 @@ remake-duan-redux-toolkit:
     用redux-toolkit改写projectModal
     用redux-toolkit替换context
 用url管理projectModal状态
+用react-query缓存状态
+新增项目列表，添加bug和task图标
+看板列表样式优化
